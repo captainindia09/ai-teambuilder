@@ -32,7 +32,7 @@ router.get('/', auth, async (req, res) => {
   if (skill) filter.skills = { $in: [new RegExp(skill, 'i')] };
   if (search) filter.name = new RegExp(search, 'i');
 
-  const users = await User.find(filter).select('-password').limit(30);
+  const users = await User.find(filter).sort({ createdAt: -1 }).select('-password').limit(30);
   res.json(users);
 });
 

@@ -70,6 +70,7 @@ router.post('/chat', auth, async (req, res) => {
     const { message, context } = req.body;
     const currentUser = await User.findById(req.userId).select('-password');
     const availableUsers = await User.find({ _id: { $ne: req.userId }, availability: 'available' })
+      .sort({ createdAt: -1 })
       .select('name skills college year bio aiScore questionsAnswered').limit(30);
     const openProjects = await Project.find({ status: 'open' })
       .populate('creator', 'name').select('title description skillsNeeded domain teamSize').limit(20);
