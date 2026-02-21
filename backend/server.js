@@ -28,3 +28,6 @@ app.get('/', (req, res) => res.json({ status: 'TeamBuilder API running' }));
 // ── Start ──
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Backend running on http://localhost:${PORT}`));
+
+// Export the app for Vercel
+module.exports = app;
