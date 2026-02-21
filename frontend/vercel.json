@@ -1,5 +1,5 @@
 {
-    "rewrite": [
+    "rewrites": [
         {
             "source": "/api/(.*)",
             "destination": "https://your-backend-url.vercel.app/api/$1"
