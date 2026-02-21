@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "TeamBuilder AI",
+    "slug": "team-builder-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": { "backgroundColor": "#0f1117" },
+    "android": { "adaptiveIcon": { "backgroundColor": "#6366f1" }, "permissions": ["USE_BIOMETRIC", "USE_FINGERPRINT"] },
+    "ios": { "supportsTablet": true, "infoPlist": { "NSFaceIDUsageDescription": "Use Face ID to login" } },
+    "plugins": [["expo-local-authentication", { "faceIDPermission": "Allow TeamBuilder to use Face ID" }]]
+  }
+}
